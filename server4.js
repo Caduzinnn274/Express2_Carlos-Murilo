@@ -20,13 +20,20 @@ app.get('/',(req,res)=>{
     res.send('API de clientes')
 })
 
+
+//rota 2 - O total de clientes
 app.get('/total_clientes',(req,res)=>{
     res.send('Total Clientes' + clientes.length);
 })
 
 
+//rota 3 - Apresentar dados de um cliente específico
 app.get('/clientes/:id',(req,res)=>{
-    
+    const cliente = clientes.find(c =>c.id === parseInt(req.params.id));
+
+    //Se o cliente não existe
+    if(!cliente) res.status(404).send("Cliente não Encontrado!!!!");
+
+    //Se o cliente existe, vamos apresentar uma frase de resposta
+    res.send(`O Cliente é:${cliente.nome}, telefone${cliente.telefone}, email${cliente.email}`);
 })
-
-
