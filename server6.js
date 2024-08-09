@@ -12,4 +12,15 @@ app.listen(3000,()=>{
 
 
 //importar as funções
-const funcoes = require('.')
+const funcoes = require('./functions')
+
+app.get('/', (req,res)=>{
+    res.send("teste com arquivos externos");
+})
+
+
+app.get('/add/:a/:b',(req,res)=>{
+    const a = parseInt(req.params.a);
+    const b = parseInt(req.params.b);
+    const resultado = funcoes.add;
+})
