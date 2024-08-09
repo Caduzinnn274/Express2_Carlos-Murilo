@@ -22,5 +22,6 @@ app.get('/', (req,res)=>{
 app.get('/add/:a/:b',(req,res)=>{
     const a = parseInt(req.params.a);
     const b = parseInt(req.params.b);
-    const resultado = funcoes.add;
+    const resultado = funcoes.add(a,b);
+    res.send(`A soma de ${a} com ${b} é ${resultado}`);
 })
