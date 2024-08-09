@@ -1,6 +1,6 @@
 const express = require('express');
-const server = express();
-server.listen(3000,()=>{
+const app = express();
+app.listen(3000,()=>{
     console.log("Olá povo abençoado, Server no ar!")
 
 })
@@ -11,7 +11,7 @@ const clientes = [
     {id:2, nome:"Berigenilda", telefone:"222222222", email:"beri@gmail.com"},
     {id:3, nome:"Conegundes", telefone:"333333333", email:"cone@gmail.com"},
     {id:4, nome:"Desideri", telefone:"444444444", email:"desi@gmail.com"},
-    {id:5, nome:"Emengarda", telefone:"555555555", email:"Emem@gmail.com"}
+    {id:5, nome:"Emengarda", telefone:"555555555", email:"emem@gmail.com"}
 ]
 
 
@@ -37,3 +37,6 @@ app.get('/clientes/:id',(req,res)=>{
     //Se o cliente existe, vamos apresentar uma frase de resposta
     res.send(`O Cliente é:${cliente.nome}, telefone${cliente.telefone}, email${cliente.email}`);
 })
+
+
+
